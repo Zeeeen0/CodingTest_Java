@@ -1,11 +1,12 @@
 class Solution {
     public int solution(int n) {
-        int[] fibonacci = new int[n + 1];
-        fibonacci[0] = 0;
-        fibonacci[1] = 1;
+        int a = 0;
+        int b = 1;
         for (int i = 2; i <= n; i++) {
-            fibonacci[i] = (fibonacci[i - 1] + fibonacci[i - 2]) % 1234567; // int형 범위로 인해 % 1234567 한 값을 저장시킴
+            int t = a;
+            a = b;
+            b = (t + b) % 1234567;
         }
-        return fibonacci[n];
+        return b;
     }
 }
